@@ -47,10 +47,12 @@ def get_user(request):
     
     return id_user
 
-#local URI = mongodb://localhost:27017/
+import os
+mongo_link = os.evrion['MONGO_LINK']
 #mongodb+srv://7amota04:eMfNLR02bJyUr9bc@cluster0.bgxx4tr.mongodb.net/
-client = MongoClient('mongodb+srv://7amota04:eMfNLR02bJyUr9bc@cluster0.bgxx4tr.mongodb.net/')
-db = client['clinic']
+client = MongoClient(mongo_link)
+dbName = os.environ['DBname']
+db = client[dbName]
 
 @api_view(['POST'])
 def signUp(request):
