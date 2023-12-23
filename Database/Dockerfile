@@ -10,4 +10,4 @@ RUN chown -R mongodb:mongodb /custom/data/db /custom/data/configdb
 COPY db.js /docker-entrypoint-initdb.d/
 
 # Set the custom dbpath for MongoDB
-CMD ["mongod", "--dbpath", "/custom/data/db"]
+CMD ["mongod", "--dbpath", "/custom/data/db", "--journal"]
