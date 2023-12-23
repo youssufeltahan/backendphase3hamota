@@ -48,7 +48,7 @@ def get_user(request):
     return id_user
 
 import os
-mongo_link = os.envrion['MONGO_LINK']
+mongo_link = os.environ['MONGO_LINK']
 #mongodb+srv://7amota04:eMfNLR02bJyUr9bc@cluster0.bgxx4tr.mongodb.net/
 client = MongoClient(mongo_link)
 dbName = os.environ['DBname']
