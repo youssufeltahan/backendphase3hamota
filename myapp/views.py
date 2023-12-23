@@ -53,7 +53,8 @@ mongo_link = os.environ['MONGO_LINK']
 client = MongoClient(mongo_link)
 dbName = os.environ['DBname']
 db = client[dbName]
-
+print(mongo_link)
+print(DBname)
 @api_view(['POST'])
 def signUp(request):
     if request.method == 'POST':
