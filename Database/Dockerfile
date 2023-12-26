@@ -2,7 +2,7 @@
 FROM mongo:latest
 
 # Set environment variables (optional)
-WORKDIR /phase1
+WORKDIR /backendphase3hamota
 ENV  MONGO_INITDB_DATABASE=clinic
 ENV DB_PORT=27017
 
