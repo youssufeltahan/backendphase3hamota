@@ -1,13 +1,13 @@
+# Use the official MongoDB image as the base image
 FROM mongo:latest
 
-# Create a directory for MongoDB data
-RUN mkdir -p /custom/data/db /custom/data/configdb
+# Set environment variables (optional)
+WORKDIR /phase1
+ENV  MONGO_INITDB_DATABASE=clinic
+ENV DB_PORT=27017
 
-# Set permissions for the directories
-RUN chown -R mongodb:mongodb /custom/data/db /custom/data/configdb
+RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
 
-# Copy initialization script to the entrypoint directory
-COPY db.js /docker-entrypoint-initdb.d/
+EXPOSE $DB_PORT
 
-# Set the custom dbpath for MongoDB
-CMD ["mongod", "--dbpath", "/custom/data/db", "--journal"]
+CMD ["mongod"]
