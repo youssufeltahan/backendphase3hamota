@@ -8,6 +8,6 @@ ENV DB_PORT=27017
 
 RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
 
-EXPOSE $DB_PORT
+EXPOSE $DBname
 
 CMD ["mongod"]
